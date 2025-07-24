@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps {
-                sh 'docker build -t bharath145/dev_repo_guvitask . '
+                sh './build.sh'
             } 
         }
         stage ('Push to Docker Hub'){
