@@ -10,11 +10,6 @@ pipeline {
                     }
 				
 		}  
-        stage('Build Docker Image'){
-            steps {
-           //     sh './build.sh'
-            } 
-        }
         stage ('Push to Docker Hub'){
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
