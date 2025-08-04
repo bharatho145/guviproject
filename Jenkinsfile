@@ -11,7 +11,7 @@ pipeline {
 			checkout scmGit(branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/bharatho145/guviproject.git']])
 		    } else if (env.GIT_BRANCH == 'prod') {
                         echo "This is the production branch"
-			checkout scmGit(branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/bharatho145/guviproject.git']])
+			checkout scmGit(branches: [[name: '*/prod']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/bharatho145/guviproject.git']])
                         // Add develop branch-specific build steps here
                     }
 				
