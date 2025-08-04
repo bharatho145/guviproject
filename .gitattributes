@@ -1,2 +1,3 @@
 build.sh merge=foo
 deploy.sh merge=foo
+Jenkinsfile merge=foo
