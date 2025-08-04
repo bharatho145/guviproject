@@ -11,7 +11,6 @@ pipeline {
 				
 		}  
             }
-        }
         stage('Build Docker Image'){
             steps {
                 sh './build.sh'
@@ -25,6 +24,5 @@ pipeline {
                 }
             }
         }
-    }
 }
 
