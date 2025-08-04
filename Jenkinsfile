@@ -5,11 +5,14 @@ pipeline {
         stage('Checkout SCM') {
             steps {
  	        script {
-		    echo "Building branch: ${env.BRANCH_NAME}"
-	            if (env.BRANCH_NAME == 'dev') {
+		    echo "Building branch: ${env.GIT_BRANCH}"
+	            if (env.GIT_BRANCH == 'dev') {
 		        echo "====Checkout Dev repo ====="
 			checkout scmGit(branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/bharatho145/guviproject.git']])
-		    }
+		    } else if (env.GIT_BRANCH == 'prod') {
+                        echo "This is the production branch"
+                        // Add develop branch-specific build steps here
+                    }
 				
 		}  
             }
