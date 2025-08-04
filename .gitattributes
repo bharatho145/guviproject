@@ -1,0 +1,2 @@
+build.sh merge=foo
+deploy.sh merge=foo
